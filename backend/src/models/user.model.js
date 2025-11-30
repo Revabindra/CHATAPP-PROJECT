@@ -1,21 +1,56 @@
+// import mongoose from "mongoose";
+
+// const userSchema = new mongoose.Schema(
+//   {
+//     email: {
+//       type: String,
+//       required: true,
+//       unique: true,
+//     },
+//     fullName: {
+//       type: String,
+//       required: true,
+//     },
+//     password: {
+//       type: String,
+//       required: true,
+//       minlength: 6,
+//     },
+//     profilePic: {
+//       type: String,
+//       default: "",
+//     },
+//   },
+//   { timestamps: true }
+// );
+
+// const User = mongoose.model("User", userSchema);
+
+// export default User;
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-    },
     fullName: {
       type: String,
-      required: true,
+      required: [true, "Full name is required"],
+      trim: true,
     },
+
+    email: {
+      type: String,
+      required: [true, "Email is required"],
+      unique: true,
+      lowercase: true,
+      trim: true,
+    },
+
     password: {
       type: String,
-      required: true,
+      required: [true, "Password is required"],
       minlength: 6,
     },
+
     profilePic: {
       type: String,
       default: "",
