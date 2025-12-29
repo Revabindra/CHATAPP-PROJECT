@@ -1,21 +1,15 @@
-﻿# CHATAPP-PROJECT
+##nChatty is a real-time chat web application built using the MERN stack with Socket.IO that enables users to communicate instantly with online status tracking, secure authentication and profile customization.
 
-I have built an Responsive Chat application using MERN stack where implemented socket.io for real time communication.
+Features
 
----
+User authentication using JWT & bcrypt
+Real-time messaging using Socket.IO
+Online users tracking
+Profile image upload 
+Protected routes with middleware
+Responsive UI using TailwindCSS
+Toast notifications
+Secure password hashing
 
-## Image Uploads (Photos)
-
-- The backend supports sending images with messages. It will attempt to upload images to Cloudinary if you set the following environment variables in `backend/.env`:
-
-  - `CLOUDINARY_CLOUD_NAME`
-  - `CLOUDINARY_API_KEY`
-  - `CLOUDINARY_API_SECRET`
-
-- If Cloudinary is not configured, the server automatically saves uploaded images to `backend/public/uploads/` and serves them at `/uploads/<filename>` so photos will still work in development.
-
-- To enable Cloudinary, create a free account at https://cloudinary.com/, then add the three keys to your `backend/.env`.
-
----
 
 
