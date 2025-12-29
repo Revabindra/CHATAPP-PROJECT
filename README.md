@@ -1,4 +1,4 @@
-##nChatty is a real-time chat web application built using the MERN stack with Socket.IO that enables users to communicate instantly with online status tracking, secure authentication and profile customization.
+## Chatty is a real-time chat web application built using the MERN stack with Socket.IO that enables users to communicate instantly with online status tracking, secure authentication and profile customization.
 
 Features
 
@@ -10,6 +10,7 @@ Protected routes with middleware
 Responsive UI using TailwindCSS
 Toast notifications
 Secure password hashing
+
 
 
 
