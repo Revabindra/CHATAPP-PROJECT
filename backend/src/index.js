@@ -22,10 +22,19 @@ app.use(express.urlencoded({ limit: "10mb", extended: true })); // Increase URL-
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "http://localhost:5174", "http://localhost:5175"],
     credentials: true,
   })
 );
+
+// Health check endpoint for quick reachability tests
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ ok: true, ts: new Date().toISOString() });
+});
+
+// Serve uploaded images (useful in development or when Cloudinary isn't configured)
+// Ensure path points to backend/public/uploads (no parent directory) so files saved locally are served correctly.
+app.use("/uploads", express.static(path.join(__dirname, "public", "uploads")));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);

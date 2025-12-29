@@ -16,3 +16,4 @@ const deletedUserSchema = new mongoose.Schema({
 const DeletedUser = mongoose.model("DeletedUser", deletedUserSchema);
 
 export default DeletedUser;
+
